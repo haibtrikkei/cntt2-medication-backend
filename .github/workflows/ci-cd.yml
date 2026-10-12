@@ -66,9 +66,9 @@ jobs:
   
             cd ~/cntt2-backend-app/cntt2-medication-backend
   
-            docker compose pull cntt2-medication-backend
+            docker compose pull medication-backend
   
-            docker compose up -d cntt2-medication-backend
+            docker compose up -d medication-backend
   
             docker compose ps
           
