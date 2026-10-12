@@ -6,6 +6,7 @@ on:
             - main
 jobs:
   build:
+    name: Xây dựng và kiểm thử ứng dụng Spring Boot
     runs-on: ubuntu-latest
 
     steps:
