@@ -1,9 +1,6 @@
 services:
   medication-backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: medication-backend
+    image: haibtrikkei/cntt2-medication-backend:latest
     restart: always
     ports:
       - "9090:9090"
