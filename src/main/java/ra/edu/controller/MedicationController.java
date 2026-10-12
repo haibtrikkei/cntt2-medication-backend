@@ -39,9 +39,9 @@ public class MedicationController {
                 medicationService.getMedication(id),
                 null,
                 HttpStatus.OK
-        ), HttpStatus.OK);))
+        ), HttpStatus.OK);
     }
-    
+
     @GetMapping("/pagination")
     public ResponseEntity<ApiDataResponse<Page<MedicationDTOResponse>>> getMadicationPaging(@RequestParam(name = "page", defaultValue = "1") Integer page) {
         Integer pageSize = 5;
