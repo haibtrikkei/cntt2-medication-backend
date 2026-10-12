@@ -40,7 +40,7 @@ jobs:
             -t ${{ secrets.DOCKERHUB_USERNAME }}/cntt2-medication-backend:latest \
             .
 
-      - name: Kéo Docker image lên Docker Hub
+      - name: Đẩy Docker image lên Docker Hub
         run: |
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/cntt2-medication-backend:latest
   deploy:

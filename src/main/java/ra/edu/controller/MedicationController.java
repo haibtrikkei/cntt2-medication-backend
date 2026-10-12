@@ -31,6 +31,17 @@ public class MedicationController {
         ), HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<ApiDataResponse<MedicationDTOResponse>> getMedicationById(@PathVariable Long id) {
+        return new ResponseEntity<>(new ApiDataResponse<>(
+                true,
+                "Lấy thông tin thuốc thành công",
+                medicationService.getMedication(id),
+                null,
+                HttpStatus.OK
+        ), HttpStatus.OK);))
+    }
+    
     @GetMapping("/pagination")
     public ResponseEntity<ApiDataResponse<Page<MedicationDTOResponse>>> getMadicationPaging(@RequestParam(name = "page", defaultValue = "1") Integer page) {
         Integer pageSize = 5;

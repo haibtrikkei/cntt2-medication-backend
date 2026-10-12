@@ -20,10 +20,17 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class MedicationServiceImpl implements MedicationService {
+
+
     private final MedicationRepository medicationRepository;
     private final MedicationMapper medicationMapper;
     private final ObjectMapper objectMapper;
 
+    @Override
+    public MedicationDTOResponse getMedication(Long id) {
+        Medication medication = medicationRepository.findById(id).orElseThrow(() -> new MedicationNotFound("Không tìm thấy thuốc có mã: " + id));
+        return medicationMapper.ormToMedicationResponse(medication);
+    }
 
     @Override
     public List<MedicationDTOResponse> getMedications() {

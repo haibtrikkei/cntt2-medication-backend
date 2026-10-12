@@ -10,6 +10,7 @@ import java.util.List;
 public interface MedicationService {
     //Không phân trang
     List<MedicationDTOResponse> getMedications();
+    MedicationDTOResponse getMedication(Long id);
     Page<MedicationDTOResponse> getAllMedications(Integer page, Integer pageSize);
     MedicationDTOResponse insertMedication(MedicationDTORequest medicationDTORequest);
     MedicationDTOResponse updateMedication(Long id, MedicationDTORequest medicationDTORequest);
